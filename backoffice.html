@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"> 
+    <title>Ecommerce Backoffice Demo</title>
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand">Ecommerce Backoffice Demo</a>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="create-box">
+            <div class="row mt-5">
+                <div class="col-sm-2">
+                    <input class="form-control form-control-sm" type="text" placeholder="Product Name" id="name-field" aria-label=".form-control-sm example">
+                </div>
+                <div class="col-sm-2">
+                    <input class="form-control form-control-sm" type="text" placeholder="Product Description" id="desc-field" aria-label=".form-control-sm example">
+                </div>
+                <div class="col-sm-2">
+                    <input class="form-control form-control-sm" type="text" placeholder="Product Brand" id="brand-field" aria-label=".form-control-sm example">
+                </div>
+                <div class="col-sm-2">
+                    <input class="form-control form-control-sm" type="number" step="0.01" placeholder="Product Price" id="price-field" aria-label=".form-control-sm example">                
+                </div>
+                <div class="col-sm-2">
+                    <input class="form-control form-control-sm" type="text" placeholder="Product Image" id="upload-img" aria-label=".form-control-sm example">                
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-success" id="create-btn">
+                        <i class="fa-solid fa-plus me-1"></i>
+                        <span>Add Product</span>
+                    </button>
+                </div>
+            </div>
+      </div>
+    <div class="delete-box">
+        <div class="row mt-5">
+            <div class="col-sm-2">
+                <input class="form-control form-control-sm" type="text" placeholder="Product Id" id="id-field" aria-label=".form-control-sm example">                
+            </div>
+            <div class="col-sm-2">
+                <button class="btn btn-success" id="delete-btn">
+                    <i class="fa-solid fa-plus me-1"></i>
+                    <span>Delete Product</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="edit-box">
+        <div class="row mt-5">
+            <div class="col-sm-2">
+                <input class="form-control form-control-sm" type="text" placeholder="editing Id" id="editng-id-field" aria-label=".form-control-sm example">                
+            </div>
+            <div class="col-sm-2">
+                <button class="btn btn-success" id="edit-btn">
+                    <i class="fa-solid fa-plus me-1"></i>
+                    <span>Edit Product</span>
+                </button>
+            </div>
+            <div class="row mt-5 d-none" id="editing-section">
+                <div class="col-sm-2">
+                    <input class="form-control form-control-sm" type="text" placeholder="Product Edited Name" id="edited-name-field" aria-label=".form-control-sm example">
+                </div>
+                <div class="col-sm-2">
+                    <input class="form-control form-control-sm" type="text" placeholder="Product Edited Description" id="edited-desc-field" aria-label=".form-control-sm example">
+                </div>
+                <div class="col-sm-2">
+                    <input class="form-control form-control-sm" type="text" placeholder="Product Edited Brand" id="edited-brand-field" aria-label=".form-control-sm example">
+                </div>
+                <div class="col-sm-2">
+                    <input class="form-control form-control-sm" type="number" step="0.01" placeholder="Product edited Price" id="edited-price-field" aria-label=".form-control-sm example">                
+                </div>
+                <div class="col-sm-2">
+                    <input class="form-control form-control-sm" type="text" placeholder="Product Edited Image" id="edited-upload-img" aria-label=".form-control-sm example">                
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-success" id="submit-editing-button">
+                        <i class="fa-solid fa-plus me-1"></i>
+                        <span>Submit</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-warning d-none" role="alert" id="empty-fields">
+        <i class="fa-solid fa-triangle-exclamation me-1"></i>
+        <span id="alert-message">Valorizza tutti i campi richiesti!</span>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
