@@ -9,6 +9,7 @@ const deleteProductButton = document.getElementById("delete-btn");
 const emptyFields = document.getElementById("empty-fields");
 const alertMessage = document.getElementById("alert-message");
 const apiUrl = "https://striveschool-api.herokuapp.com/api/product/";
+const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDgwNDhjYmQyYWRhNDAwMTQzYzFlOTciLCJpYXQiOjE2ODYxMjg4NDMsImV4cCI6MTY4NzMzODQ0M30.gzC_Pzl_1gPar51Qg01hNkIbTtP2aJ8c9m2znFXIATo";
 const productsSection = document.getElementById("products-section");
 const successMessage = document.getElementById("success-action");
 
@@ -39,7 +40,7 @@ async function addNewProduct() {
             body: JSON.stringify(payload),
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDgwNDhjYmQyYWRhNDAwMTQzYzFlOTciLCJpYXQiOjE2ODYxMjg4NDMsImV4cCI6MTY4NzMzODQ0M30.gzC_Pzl_1gPar51Qg01hNkIbTtP2aJ8c9m2znFXIATo"
+                "Authorization": "Bearer " + apiKey 
             }
             });
     
@@ -86,7 +87,7 @@ async function deleteProduct(){
             const response = await fetch(apiUrl + productIdInput.value, {
                 method: "DELETE",
                 headers: {
-                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDgwNDhjYmQyYWRhNDAwMTQzYzFlOTciLCJpYXQiOjE2ODYxMjg4NDMsImV4cCI6MTY4NzMzODQ0M30.gzC_Pzl_1gPar51Qg01hNkIbTtP2aJ8c9m2znFXIATo"
+                    "Authorization": "Bearer " + apiKey 
                 }
                 });
         
@@ -132,7 +133,7 @@ editButton.addEventListener("click", async () => {
             const response = await fetch(apiUrl + productIdInput.value, {
                 method: "GET",
                 headers: {
-                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDgwNDhjYmQyYWRhNDAwMTQzYzFlOTciLCJpYXQiOjE2ODYxMjg4NDMsImV4cCI6MTY4NzMzODQ0M30.gzC_Pzl_1gPar51Qg01hNkIbTtP2aJ8c9m2znFXIATo"
+                    "Authorization": "Bearer " + apiKey 
                 }
                 });
         
@@ -188,7 +189,7 @@ async function editProduct() {
 
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDgwNDhjYmQyYWRhNDAwMTQzYzFlOTciLCJpYXQiOjE2ODYxMjg4NDMsImV4cCI6MTY4NzMzODQ0M30.gzC_Pzl_1gPar51Qg01hNkIbTtP2aJ8c9m2znFXIATo"
+            "Authorization": "Bearer " + apiKey 
         }
         });
       
@@ -225,7 +226,7 @@ const fetchProducts = async () => {
         const response = await fetch (apiUrl, {
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDgwNDhjYmQyYWRhNDAwMTQzYzFlOTciLCJpYXQiOjE2ODYxMjg4NDMsImV4cCI6MTY4NzMzODQ0M30.gzC_Pzl_1gPar51Qg01hNkIbTtP2aJ8c9m2znFXIATo"
+                "Authorization": "Bearer " + apiKey 
             }
         });
         if (response.ok){
@@ -300,3 +301,14 @@ const renderProductDetails = (product) => {
 window.onload = () => {
     fetchProducts();
 }
+
+const student = {
+    name: "Diego",
+    surname: "PRova",
+    age: "18",
+}
+
+const {name, age = 20 } = student;
+console.log(age);
+
+

@@ -1,4 +1,5 @@
 const apiUrl = "https://striveschool-api.herokuapp.com/api/product/";
+const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDgwNDhjYmQyYWRhNDAwMTQzYzFlOTciLCJpYXQiOjE2ODYxMjg4NDMsImV4cCI6MTY4NzMzODQ0M30.gzC_Pzl_1gPar51Qg01hNkIbTtP2aJ8c9m2znFXIATo";
 const productsSection = document.getElementById("products-section");
 const productDetailsContainer = document.getElementById("product-details");
 
@@ -8,7 +9,7 @@ const fetchProducts = async () => {
         const response = await fetch (apiUrl, {
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDgwNDhjYmQyYWRhNDAwMTQzYzFlOTciLCJpYXQiOjE2ODYxMjg4NDMsImV4cCI6MTY4NzMzODQ0M30.gzC_Pzl_1gPar51Qg01hNkIbTtP2aJ8c9m2znFXIATo"
+                "Authorization": "Bearer " + apiKey 
             }
         });
         if (response.ok){
@@ -86,7 +87,7 @@ const fetchProductsDetails = async () => {
         const response = await fetch(apiUrl + productId, {
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDgwNDhjYmQyYWRhNDAwMTQzYzFlOTciLCJpYXQiOjE2ODYxMjg4NDMsImV4cCI6MTY4NzMzODQ0M30.gzC_Pzl_1gPar51Qg01hNkIbTtP2aJ8c9m2znFXIATo"
+                "Authorization": "Bearer " + apiKey 
             }
         });
         if (response.ok) {
